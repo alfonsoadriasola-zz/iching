@@ -14,7 +14,7 @@ class Iching
 end
 
 class SixteenMethodHexagramMaker
-  MAP={old_yin: 6, young_yang: 8, young_yin: 7, old_yang: 9}
+  MAP={old_yin: 6, young_yang: 7, young_yin: 8, old_yang: 9}
   def do
     marbles = []
     marbles += [:old_yin]
@@ -30,6 +30,7 @@ class SixteenMethodHexagramMaker
     hexagram.map{|e| MAP[e]}
   end
 end
+
 
 class CoinMethodHexagramMaker
   def do
