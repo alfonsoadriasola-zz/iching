@@ -76,7 +76,7 @@ class HexagramRenderer
       end
     end.reverse
     puts
-    puts `cat ./hexagrams/#{linkaddr.join}.html.md`
+    puts `cat ./hexagrams/#{linkaddr.join}.md`
     puts
   end
 
