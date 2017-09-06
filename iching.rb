@@ -1,7 +1,7 @@
 class Iching
-  def cast( maker: CoinMethodHexagramMaker,
-            changer: HexagramChanger,
-            renderer: HexagramRenderer)
+  def cast(maker: SixteenMethodHexagramMaker,
+           changer: HexagramChanger,
+           renderer: HexagramRenderer)
 
     puts "#{ARGV[0]}"
 
@@ -15,19 +15,20 @@ end
 
 class SixteenMethodHexagramMaker
   MAP={old_yin: 6, young_yang: 7, young_yin: 8, old_yang: 9}
+
   def do
     marbles = []
     marbles += [:old_yin]
-    marbles += 5.times.map{:young_yang}
-    marbles += 7.times.map{:young_yin}
-    marbles += 3.times.map{:old_yang}
+    marbles += 5.times.map { :young_yang }
+    marbles += 7.times.map { :young_yin }
+    marbles += 3.times.map { :old_yang }
     hexagram = []
     6.times do
       sleep(0.2)
       throw = marbles[Random.new.rand(16)]
       hexagram << throw
     end
-    hexagram.map{|e| MAP[e]}
+    hexagram.map { |e| MAP[e] }
   end
 end
 
@@ -76,7 +77,11 @@ class HexagramRenderer
       end
     end.reverse
     puts
-    puts `cat ./hexagrams/#{linkaddr.join}.md`
+    File.open("#{__dir__}/hexagrams/#{linkaddr.join}.md", "r") do |f|
+      f.each_line do |line|
+        puts line
+      end
+    end
     puts
   end
 
@@ -97,4 +102,4 @@ class HexagramRenderer
   end
 end
 
-Iching.new.cast(maker: SixteenMethodHexagramMaker)
+Iching.new.cast
