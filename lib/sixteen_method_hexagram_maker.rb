@@ -1,3 +1,4 @@
+require 'securerandom'
 class SixteenMethodHexagramMaker
   MAP={old_yin: 6, young_yang: 7, young_yin: 8, old_yang: 9}
 
@@ -10,7 +11,7 @@ class SixteenMethodHexagramMaker
     hexagram = []
     6.times do
       sleep(0.2)
-      throw = marbles[Random.new.rand(16)]
+      throw = marbles[Random.new(SecureRandom.random_number*10000000).rand(16)]
       hexagram << throw
     end
     hexagram.map { |e| MAP[e] }

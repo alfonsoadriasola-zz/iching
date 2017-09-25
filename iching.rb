@@ -11,7 +11,7 @@ class Iching
     hexagram2 = changer.new.do hexagram
 
     renderer.new.do hexagram
-    renderer.new.do hexagram2
+    renderer.new.do hexagram2 if hexagram2 != hexagram
   end
 end
 
