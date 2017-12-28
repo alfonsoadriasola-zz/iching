@@ -3,13 +3,13 @@ class HexagramRenderer
     linkaddr = hexagram.map do |l|
       case l.to_i
         when 9
-          0
+          1
         when 8
           0
         when 7
           1
         when 6
-          1
+          0
       end
     end.reverse
     puts
@@ -25,13 +25,13 @@ class HexagramRenderer
     hexagram.reverse.map do |l|
       case l.to_i
         when 9
-          puts '---~  ~---'
+          puts '---ooo---'
         when 8
-          puts '--      --'
+          puts '---   ---'
         when 7
-          puts '----------'
+          puts '---------'
         when 6
-          puts '---~~~~---'
+          puts '---xxx---'
       end
     end
     link(hexagram)

@@ -3,13 +3,13 @@ class HexagramChanger
     hexagram.map do |l|
       case l
         when 9
-          7
+          8
         when 8
           8
         when 7
           7
         when 6
-          8
+          9
       end
     end
   end
