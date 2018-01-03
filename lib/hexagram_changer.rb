@@ -9,7 +9,7 @@ class HexagramChanger
         when 7
           7
         when 6
-          9
+          7
       end
     end
   end
