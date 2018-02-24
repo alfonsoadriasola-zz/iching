@@ -1,7 +1,7 @@
 class HexagramRenderer
   def do(hexagram)
     make_line_art(hexagram)
-    render_file(hexagram)
+    render_hexagram(hexagram)
   end
 
   def make_line_art(hexagram)
@@ -20,7 +20,7 @@ class HexagramRenderer
     art.each {|l| puts l}
   end
 
-  def render_file(hexagram)
+  def render_hexagram(hexagram)
     linkaddr = make_binary_string(hexagram)
     render_file(linkaddr)
   end
