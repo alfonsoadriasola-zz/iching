@@ -38,4 +38,12 @@ describe HexagramRenderer do
       @renderer.make_line_art([]).must_be_empty
     end
   end
+
+  describe 'when asked to do' do
+    it 'will do to hexes but line art only 1' do
+      @renderer.do(hexagram: [6, 6, 6, 6, 6, 6], first: false)
+    end
+
+  end
 end
+

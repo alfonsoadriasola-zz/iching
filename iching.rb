@@ -10,8 +10,8 @@ class Iching
     hexagram = maker.new.do
     hexagram2 = changer.new.do hexagram
 
-    renderer.new.do hexagram
-    renderer.new.do hexagram2 if hexagram2 != hexagram
+    renderer.new.do hexagram: hexagram
+    renderer.new.do hexagram: hexagram2, first: false if hexagram2 != hexagram
   end
 end
 

@@ -1,6 +1,6 @@
 class HexagramRenderer
-  def do(hexagram)
-    make_line_art(hexagram)
+  def do(hexagram: [], first: true)
+    make_line_art(hexagram) if first
     render_hexagram(hexagram)
   end
 

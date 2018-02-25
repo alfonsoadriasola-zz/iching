@@ -1,5 +1,5 @@
 require_relative 'test_helper'
-require_relative '../lib/../lib/hexagram_changer'
+require_relative '../lib/hexagram_changer'
 describe HexagramChanger do
 
   it 'changes array of changing numbers to fixed ones' do
