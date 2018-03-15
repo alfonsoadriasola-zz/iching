@@ -1,7 +1,6 @@
 require_relative 'test_helper'
 require_relative '../lib/hexagram_changer'
 describe HexagramChanger do
-
   it 'changes array of changing numbers to fixed ones' do
     hex = [6, 6, 6, 6, 6, 6]
     hex2 = HexagramChanger.new.do(hex)
@@ -19,5 +18,4 @@ describe HexagramChanger do
     hex2 = HexagramChanger.new.do(hex)
     HexagramChanger.new.do(hex2).must_equal hex2
   end
-
 end

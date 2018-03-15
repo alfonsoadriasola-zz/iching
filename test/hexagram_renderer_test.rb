@@ -43,7 +43,5 @@ describe HexagramRenderer do
     it 'will do to hexes but line art only 1' do
       @renderer.do(hexagram: [6, 6, 6, 6, 6, 6], first: false)
     end
-
   end
 end
-

@@ -5,7 +5,7 @@ class Iching
            changer: HexagramChanger,
            renderer: HexagramRenderer)
 
-    puts "#{ARGV[0]}"
+    puts (ARGV[0]).to_s
 
     hexagram = maker.new.do
     hexagram2 = changer.new.do hexagram
