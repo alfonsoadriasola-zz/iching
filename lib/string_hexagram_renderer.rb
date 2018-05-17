@@ -36,7 +36,7 @@ class StringHexagramRenderer
         lines << line
       end
     end
-    puts
+    lines
   end
 
   def make_binary_string(hexagram)
