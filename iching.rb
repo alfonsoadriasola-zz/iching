@@ -5,8 +5,6 @@ class Iching
            changer: HexagramChanger,
            renderer: HexagramRenderer)
 
-    puts (ARGV[0]).to_s
-
     hexagram = maker.new.do
     hexagram2 = changer.new.do hexagram
 
@@ -14,5 +12,5 @@ class Iching
     renderer.new.do hexagram: hexagram2, first: false if hexagram2 != hexagram
   end
 end
-
-Iching.new.cast
+Iching.new.cast(renderer: StringHexagramRenderer) if ENV['WEB']
+Iching.new.cast unless ENV['WEB']
