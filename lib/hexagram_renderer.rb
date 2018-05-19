@@ -25,8 +25,6 @@ class HexagramRenderer
     render_file(linkaddr)
   end
 
-  private
-
   def render_file(linkaddr)
     puts
     File.open("#{__dir__}/../hexagrams/#{linkaddr.join}.md", 'r') do |f|

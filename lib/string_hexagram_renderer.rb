@@ -1,4 +1,5 @@
-class StringHexagramRenderer
+require_relative './hexagram_renderer.rb'
+class StringHexagramRenderer < HexagramRenderer
   def do(hexagram: [], first: true)
     out = []
     out += make_line_art(hexagram) if first
@@ -7,27 +8,19 @@ class StringHexagramRenderer
   end
 
   def make_line_art(hexagram)
-    art = hexagram.reverse.map do |l|
+    hexagram.reverse.map do |l|
       case l.to_i
       when 9
-        '---ooo---'
+        '<pre>---ooo---</pre>'
       when 8
-        '---   ---'
+        '<pre>---   ---</pre>'
       when 7
-        '---------'
+        '<pre>---------</pre>'
       when 6
-        '---xxx---'
+        '<pre>---xxx---</pre>'
       end
     end
-    art
   end
-
-  def render_hexagram(hexagram)
-    linkaddr = make_binary_string(hexagram)
-    render_file(linkaddr)
-  end
-
-  private
 
   def render_file(linkaddr)
     lines = []
@@ -37,20 +30,5 @@ class StringHexagramRenderer
       end
     end
     lines
-  end
-
-  def make_binary_string(hexagram)
-    hexagram.map do |l|
-      case l.to_i
-      when 9
-        1
-      when 8
-        0
-      when 7
-        1
-      when 6
-        0
-      end
-    end.reverse
   end
 end
