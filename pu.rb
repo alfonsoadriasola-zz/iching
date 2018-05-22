@@ -1,6 +1,6 @@
 # pu.rb
 require 'sinatra'
-
+ENV['WEB'] = '1'
 get '/' do
   erb :index
 end
