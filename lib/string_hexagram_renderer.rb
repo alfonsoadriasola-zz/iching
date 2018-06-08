@@ -7,7 +7,7 @@ class StringHexagramRenderer < HexagramRenderer
     out.join("\n")
   end
 
-  def make_line_art(hexagram)
+  def make_line_art(hexagram = Array.new(7, 7))
     hexagram.reverse.map do |l|
       case l.to_i
       when 9

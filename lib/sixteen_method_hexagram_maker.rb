@@ -10,9 +10,9 @@ class SixteenMethodHexagramMaker
     marbles += Array.new(3) { :old_yang }
     hexagram = []
     6.times do
-      sleep SecureRandom.rand(0.003)
       throw = marbles[SecureRandom.random_number(0..15)]
       hexagram << throw
+      sleep SecureRandom.rand(0.003)
     end
     hexagram.map { |e| MAP[e] }
   end
