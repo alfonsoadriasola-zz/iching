@@ -3,6 +3,7 @@ GEM
   specs:
     kramdown (1.17.0)
     mustermann (1.0.2)
+    openssl (2.1.1)
     rack (2.0.5)
     rack-protection (2.0.2)
       rack
@@ -18,7 +19,8 @@ PLATFORMS
 
 DEPENDENCIES
   kramdown
+  openssl
   sinatra
 
 BUNDLED WITH
-   1.16.1
+   1.16.3
