@@ -8,4 +8,4 @@ example
 
 ```ruby iching.rb "ask your question here, typing helps focus"```
 
-```ruby pu.rb ```
+```ruby pu.rb -o 0.0.0.0 ```
