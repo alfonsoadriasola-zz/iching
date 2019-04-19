@@ -8,5 +8,6 @@ class PutsHexagramRenderer < HexagramRenderer
       end
     end
     puts
+    STDOUT.flush
   end
 end
