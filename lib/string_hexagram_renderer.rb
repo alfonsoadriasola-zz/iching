@@ -1,6 +1,5 @@
 require_relative './hexagram_renderer.rb'
 class StringHexagramRenderer < HexagramRenderer
-
   def self.out(reading1, reading2)
     "#{reading1} \n #{reading2}"
   end

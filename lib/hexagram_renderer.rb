@@ -1,7 +1,5 @@
 class HexagramRenderer
-
-  def self.out(hex1, hex2)
-    [hex1, hex2]
+  def self.out(reading1, reading2)
   end
 
   def do(hexagram: [], first: true)
