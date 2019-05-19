@@ -1,4 +1,9 @@
 class HexagramRenderer
+
+  def self.out(hex1, hex2)
+    [hex1, hex2]
+  end
+
   def do(hexagram: [], first: true)
     make_line_art(hexagram) if first
     render_hexagram(hexagram)

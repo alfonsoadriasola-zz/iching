@@ -1,5 +1,10 @@
 require_relative './hexagram_renderer.rb'
 class StringHexagramRenderer < HexagramRenderer
+
+  def self.out(reading1, reading2)
+    "#{reading1} \n #{reading2}"
+  end
+
   def do(hexagram: [], first: true)
     out = []
     out += make_line_art(hexagram) if first

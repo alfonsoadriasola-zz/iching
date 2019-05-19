@@ -1,18 +1,17 @@
 require_relative './hexagram_renderer.rb'
-class PutsHexagramRenderer < HexagramRenderer
-  def self.out(reading1, reading2)
-    reading1.flush
-    reading2.flush
+class JsonHexagramRenderer < HexagramRenderer
+
+  def out
+    JSON.generate([reading1, reading2])
   end
 
   def render_file(linkaddr)
-    puts
+    lines = ""
     File.open("#{__dir__}/../hexagrams/#{linkaddr.join}.md", 'r') do |f|
       f.each_line do |line|
-        puts line
+        lines << JSON.generate(line)
       end
     end
-    puts
-    STDOUT.flush
+    { reading: lines }
   end
 end
