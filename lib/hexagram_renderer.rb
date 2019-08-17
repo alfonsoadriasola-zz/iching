@@ -19,8 +19,8 @@ class HexagramRenderer
       when 6
         '---xxx---'
       end
-    end
-    art.each { |l| puts l }
+    end 
+    art.each_with_index { |l,i| puts "#{6-i} : #{l}"}
   end
 
   def render_hexagram(hexagram)

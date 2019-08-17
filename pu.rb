@@ -1,6 +1,11 @@
 # pu.rb
 require 'sinatra'
 ENV['WEB'] = '1'
+
+configure do
+  set :lock , true
+end
+
 get '/' do
   erb :index
 end
