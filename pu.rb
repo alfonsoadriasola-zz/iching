@@ -1,9 +1,8 @@
-# pu.rb
 require 'sinatra'
 ENV['WEB'] = '1'
 
 configure do
-  set :lock , true
+  set :lock, true
 end
 
 get '/' do
@@ -12,6 +11,6 @@ end
 
 get '/cast/' do
   load 'iching.rb'
-  markdown Iching.new.cast(renderer: StringHexagramRenderer),
+  markdown Iching.new.cast(renderer: HtmlHexagramRenderer),
            layout_engine: :erb
 end
