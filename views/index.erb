@@ -3,15 +3,15 @@
 This project is intended to illustrate a creative process,
  to challenge assumptions and provide a teachable moment.
 
-<h2> Greetings. it is <%= Time.now %> </h2>
+<h2 onmouseover="TrackPosition(event);"> Greetings. it is <%= Time.now %> </h2>
 
-<strong onmouseover="TrackPosition(event);"> Think and <a id="cast" href="/cast/">Ask</a> </strong>
+<strong> Think and <a id="cast" href="/cast/">Ask</a> </strong>
 
 <script>
-  var seed_human_random = 0.0;
+  var seed_human_random = 1;
   function TrackPosition(event) {
-    seed_human_random = seed_human_random + event.clientX;
-    seed_human_random = seed_human_random + event.clientY;
+    seed_human_random = Number(seed_human_random + event.movementX * event.movementY);
+
     var newref  = document.getElementById("cast").href + seed_human_random;
     var link = document.getElementById("cast");
     link.setAttribute("href", newref);

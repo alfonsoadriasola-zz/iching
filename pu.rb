@@ -11,7 +11,7 @@ get '/' do
 end
 
 get '/cast/:seed' do
-  seed = params['seed'].to_i
+  seed = params['seed'].gsub('-','').to_i.tap{|x| pp x }
   load 'iching.rb'
   markdown(
     Iching.new.cast(
