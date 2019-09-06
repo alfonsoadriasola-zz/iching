@@ -2,8 +2,9 @@ Dir.glob(__dir__ + '/lib/*', &method(:require))
 class Iching
   def cast(maker: SixteenMethodHexagramMaker,
            changer: HexagramChanger,
-           renderer: PutsHexagramRenderer)
-    hexagram = maker.new.do
+           renderer: PutsHexagramRenderer,
+           seed: 0)
+    hexagram = maker.new.do(seed:seed)
     hexagram2 = changer.new.do hexagram
 
     reading1 = renderer.new.do hexagram: hexagram

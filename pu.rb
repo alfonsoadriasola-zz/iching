@@ -10,9 +10,13 @@ get '/' do
   erb :index
 end
 
-get '/cast/' do
+get '/cast/:seed' do
+  seed = params['seed'].to_i
   load 'iching.rb'
   markdown(
-    Iching.new.cast(renderer: HtmlHexagramRenderer), layout_engine: :erb
+    Iching.new.cast(
+      renderer: HtmlHexagramRenderer,
+      seed: seed
+    ), layout_engine: :erb
   )
 end
