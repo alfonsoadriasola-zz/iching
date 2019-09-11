@@ -10,7 +10,7 @@ This project is intended to illustrate a creative process,
 <script>
   var seed_human_random = 1;
   function TrackPosition(event) {
-    seed_human_random = Number(seed_human_random + event.movementX * event.movementY);
+    seed_human_random = seed_human_random + (event.movementX * event.movementY);
 
     var newref  = document.getElementById("cast").href + seed_human_random;
     var link = document.getElementById("cast");
